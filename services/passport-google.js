@@ -11,7 +11,6 @@ passport.use(
     },
     (accessToken, refreshToken, profile, done) => {
       const data = profile._json;
-      console.log(data);
       User.findOne({ email: data.email }).then((user) => {
         if (user) {
           done(null, user);

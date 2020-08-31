@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const passport = require("passport");
-const userController = require("../controllers/userController");
 
 router.get(
   "/google",
@@ -15,7 +14,7 @@ router.get(
     failureRedirect: "/login",
   }),
   (req, res) => {
-    res.redirect("/");
+    res.render("index", { user: req.user.name });
   }
 );
 

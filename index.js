@@ -5,7 +5,6 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 const cookieSession = require("cookie-session");
 const passport = require("passport");
-const port = process.env.PORT || 5000;
 
 dotenv.config();
 cors();
@@ -13,6 +12,8 @@ cors();
 require("./models");
 require("./services/passport");
 
+app.set("view engine", "pug");
+app.use(express.static(__dirname + "/public"));
 app.use(
   cookieSession({
     maxAge: 60 * 60 * 1000,
@@ -24,6 +25,6 @@ app.use(passport.session());
 app.use(express.json());
 app.use(routes);
 
-app.get("/", (req, res) => res.send("Hello World"));
 
-app.listen(port, () => console.log("Server strated"));
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server started at ${PORT}`));
