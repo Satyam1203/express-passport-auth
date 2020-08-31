@@ -5,15 +5,13 @@ const { checkunAuth } = require("../services/route-protection");
 router.post(
   "/",
   passport.authenticate("local", {
-    failureRedirect: "/login",
+    failureRedirect: "/sign-in",
   }),
   (req, res) => {
-    res.render("index", { user: req.user.name });
+    res.redirect("/home");
   }
 );
 
-router.get("/", checkunAuth, (req, res) => {
-  res.send("Login here");
-});
+router.get("/", checkunAuth, (req, res) => res.redirect("/sign-in"));
 
 module.exports = router;

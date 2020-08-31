@@ -14,7 +14,7 @@ router.get(
     failureRedirect: "/login",
   }),
   (req, res) => {
-    res.render("index", { user: req.user.name });
+    res.redirect('/home');
   }
 );
 

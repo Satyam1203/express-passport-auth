@@ -4,6 +4,6 @@ const { checkunAuth } = require("../services/route-protection");
 
 router.post("/", registerController.createUser);
 
-router.get("/", checkunAuth, (req, res) => res.send("Register here"));
+router.get("/", checkunAuth, (req, res) => res.redirect("/sign-in"));
 
 module.exports = router;

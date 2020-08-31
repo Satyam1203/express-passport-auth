@@ -1,0 +1,47 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' type='text/css' href='css/styles.css')
+  script(src="js/form.js" defer)
+  script(src="js/request.js" defer)
+  script(src='https://kit.fontawesome.com/15e3edaa10.js' crossorigin='anonymous' defer)
+  title Auth App
+body
+  .nav-drawer
+    h2
+      span Auth App
+  .auth-wrapper
+    .auth
+        .toggle-sign
+            #login(onclick='toggleVisibilty()') Log In
+            #register(onclick='toggleVisibilty()') Register
+        .form
+            .login-form
+                label
+                    | Email
+                    br
+                    input(type='text')
+                label
+                    | Password
+                    br
+                    input(type='password')
+                button Log In
+            .register-form(style='display: none')
+                label
+                    | Name
+                    br
+                    input(type='text')
+                label
+                    | Email
+                    br
+                    input(type='text')
+                label
+                    | Password
+                    br
+                    input(type='password')
+                label
+                    | Confirm Password
+                    br
+                    input(type='password')
+                button Register

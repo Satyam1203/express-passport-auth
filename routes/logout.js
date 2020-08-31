@@ -4,7 +4,7 @@ router.get(
   ("/",
   (req, res) => {
     req.logout();
-    res.redirect("/login");
+    res.redirect("/sign-in");
   })
 );
 

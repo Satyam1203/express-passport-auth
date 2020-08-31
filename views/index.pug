@@ -3,6 +3,24 @@ head
   meta(charset='UTF-8')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   link(rel='stylesheet' type='text/css' href='css/styles.css')
+  script(src="js/script.js" defer)
+  script(src="js/request.js" defer)
+  script(src='https://kit.fontawesome.com/15e3edaa10.js' crossorigin='anonymous' defer)
   title Auth App
 body
-  | Hello #{user}
+  .nav-drawer
+    h2
+      i.fas.fa-bars
+      span Auth App
+    .nav-links
+      h2.hide-nav
+        i.fas.fa-chevron-left
+        span Auth App
+      ul
+        li
+          a.link(href='#') Home
+        li
+          a.link(href='#') Reset Password
+        li
+          a.link(onclick="logout()") Logout
+  div(style="text-align: center") Hello #{user}

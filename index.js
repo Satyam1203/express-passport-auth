@@ -16,7 +16,7 @@ app.set("view engine", "pug");
 app.use(express.static(__dirname + "/public"));
 app.use(
   cookieSession({
-    maxAge: 60 * 60 * 1000,
+    maxAge: 60 * 1000,
     keys: [process.env.SECRET_KEY],
   })
 );
