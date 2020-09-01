@@ -19,3 +19,29 @@ const toggleVisibilty = () => {
     loginVisible = true;
   }
 };
+
+const forgotPwd = document.getElementById("forgot-pwd");
+forgotPwd.addEventListener("click", () => {
+  const email = prompt("Enter your Email to reset password");
+  const regex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+
+  console.log(email);
+
+  if (regex.test(email)) {
+    fetch("/forgot-pwd", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        alert(data.message);
+      })
+      .catch(console.error);
+  } else {
+    alert("Invalid email format");
+  }
+});

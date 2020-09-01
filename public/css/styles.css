@@ -165,12 +165,13 @@ button:hover {
 #reset-error{
   color: #333;
 }
-#google-login{
+#google-login, #forgot-pwd{
   color: #666;
-  margin-top: 4px;
+  margin: 16px 8px;
   text-decoration: none;
+  cursor: pointer;
 }
-#google-login:hover{
+#google-login:hover, #forgot-pwd:hover{
   color: #444;
 }
 @media (min-width: 768px) {

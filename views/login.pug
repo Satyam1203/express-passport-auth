@@ -28,9 +28,13 @@ body
                     input#login-pwd(type='password' name="password")
                 #login-error
                 button(type="submit") Log In
-                a(href='/auth/google' id='google-login') 
-                    | Login with 
-                    i.fab.fa-google 
+                div
+                    a(href='/auth/google' id='google-login') 
+                        | Login with 
+                        i.fab.fa-google 
+                    | |
+                    a(id='forgot-pwd')
+                        | Forgot Password ?
             .register-form(style='display: none')
                 label
                     | Name
