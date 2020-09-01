@@ -6,6 +6,8 @@ const checkAuth = (req, res, next) => {
 };
 
 const checkunAuth = (req, res, next) => {
+  console.log('to login')
+  console.log(req.isAuthenticated())
   if (req.isAuthenticated()) {
     return res.redirect("/home");
   }

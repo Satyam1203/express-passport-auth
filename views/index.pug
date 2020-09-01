@@ -20,7 +20,13 @@ body
         li
           a.link(href='#') Home
         li
-          a.link(href='#') Reset Password
+          a.link(onclick="toggleResetBlockVisibility()") Reset Password
         li
           a.link(onclick="logout()") Logout
+    .reset-pwd 
+      input(type='password' id='curr-pwd' placeholder='Current Password' required)
+      input(type='password' id='new-pwd' placeholder='New Password' required)
+      input(type='password' id='new-pwd2' placeholder='Re-enter New Password' required)
+      #reset-error
+      button(onclick='resetPassword()') Reset Password
   div(style="text-align: center") Hello #{user}

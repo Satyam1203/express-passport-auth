@@ -17,31 +17,36 @@ body
             #login(onclick='toggleVisibilty()') Log In
             #register(onclick='toggleVisibilty()') Register
         .form
-            .login-form
+            form.login-form(action='/login' method="POST")
                 label
                     | Email
                     br
-                    input(type='text')
+                    input#login-email(type='text' name="email")
                 label
                     | Password
                     br
-                    input(type='password')
-                button Log In
+                    input#login-pwd(type='password' name="password")
+                #login-error
+                button(type="submit") Log In
+                a(href='/auth/google' id='google-login') 
+                    | Login with 
+                    i.fab.fa-google 
             .register-form(style='display: none')
                 label
                     | Name
                     br
-                    input(type='text')
+                    input#name(type='text' required)
                 label
                     | Email
                     br
-                    input(type='text')
+                    input#email(type='text' required)
                 label
                     | Password
                     br
-                    input(type='password')
+                    input#pwd(type='password' required)
                 label
                     | Confirm Password
                     br
-                    input(type='password')
-                button Register
+                    input#cnf-pwd(type='password' required)
+                #register-error
+                button(onclick='register()') Register

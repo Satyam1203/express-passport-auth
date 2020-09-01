@@ -13,6 +13,29 @@ body {
   padding: 12px;
 }
 
+.reset-pwd{
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  width: 240px;
+  background-color: #ddd;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  padding: 1rem;
+  border-radius: 1rem;
+  display: none;
+}
+
+.reset-pwd input{
+  margin: 4px 0;
+}
+
+.reset-pwd button{
+  width: max-content;
+  font-size: 14px;
+}
+
 .nav-drawer .fas {
   padding: 0 10px;
   font-size: 1.2rem;
@@ -48,7 +71,7 @@ body {
 }
 
 .nav-links ul li a {
-  padding: 20px 30%;
+  padding: 20px 20%;
   font-size: 1.1rem;
   color: #333;
   cursor: pointer;
@@ -68,6 +91,7 @@ body {
   border-radius: 1rem;
   position: relative;
   padding: 2rem 0;
+  text-align: center;
 }
 .toggle-sign {
   display: flex;
@@ -130,11 +154,31 @@ button {
 button:hover {
   background-image: linear-gradient(120deg, #c1acf1 0%, #d8a0e5 70%);
 }
+#login-error,
+#register-error, 
+#reset-error {
+  height: 14px;
+  font-size: 12px;
+  color: red;
+  text-align: center;
+}
+#reset-error{
+  color: #333;
+}
+#google-login{
+  color: #666;
+  margin-top: 4px;
+  text-decoration: none;
+}
+#google-login:hover{
+  color: #444;
+}
 @media (min-width: 768px) {
   .nav-drawer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
   }
   .nav-drawer > h2 > i {
     display: none;
